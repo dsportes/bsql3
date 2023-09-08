@@ -48,3 +48,15 @@ Everything is OK.
 Why using ES6 style causes troubles to Webpack and not CommonJs style ?
 
 Any idea or workaround ?
+
+## Test with pkg
+- import ES6 of better-sqlite3 in app.js
+- npm run start  -> OK : local test without build
+- npm run build
+- npm run testjs -> KO : cannot find 'better-sqlite3' (expected as 'externals' exclude it)
+- npm run pkg : packaging in app
+- npm run testpk -> OK : binary node_modules/better-sqlite3/build/Release/better_sqlite3.node found
+
+However, still no way for executing "node app.js" after build by webpack when using import of better-sqlite.
+
+The binary packaged by pkg is heavy (including node).

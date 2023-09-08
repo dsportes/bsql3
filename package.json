@@ -5,7 +5,10 @@
   "scripts": {
     "start": "cp test.db3 ~/tmp/dist; node app.js",
     "build": "webpack",
-    "test": "cp test.db3 ~/tmp/dist; cd ~/tmp/dist; node app.js"
+    "pkg": "cd dist; pkg -t node18-linux app.js",
+    "testpk": "cp test.db3 ~/tmp/dist; cp dist/app ~/tmp/dist; cd ~/tmp/dist; ./app",
+    "testjs": "cp test.db3 ~/tmp/dist; cp dist/app.js ~/tmp/dist; cd ~/tmp/dist; node app.js",
+    "cpbin": "cp node_modules/better-sqlite3/build/Release/better_sqlite3.node ~/tmp/dist/node_modules/better-sqlite3/build/"
   },
   "author": "Daniel Sportes",
   "license": "ISC",

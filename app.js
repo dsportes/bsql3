@@ -2,8 +2,8 @@ import os from 'os'
 const p = os.homedir + '/tmp/dist/test.db3'
 console.log(p)
 
-// import Database from 'better-sqlite3'
-import { Database } from './loadreq.js'
+import Database from 'better-sqlite3'
+// import { Database } from './loadreq.js'
 
 const db = Database(p)
 const row = db.prepare('SELECT * FROM users WHERE id = ?').get(1)
