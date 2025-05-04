@@ -3,36 +3,21 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "cp test.db3 ~/tmp/dist; node app.js",
+    "testts": "npx tsx src/app.ts",
+    "testjs": "node src/app.js",
+    "testdist": "cd ../tmp/test; node bundle.js",
     "build": "webpack",
-    "pkg": "cd dist; pkg -t node18-linux app.js",
-    "testpk": "cp test.db3 ~/tmp/dist; cp dist/app ~/tmp/dist; cd ~/tmp/dist; ./app",
-    "testjs": "cp test.db3 ~/tmp/dist; cp dist/app.js ~/tmp/dist; cd ~/tmp/dist; node app.js",
     "cpbin": "cp node_modules/better-sqlite3/build/Release/better_sqlite3.node ~/tmp/dist/node_modules/better-sqlite3/build/"
   },
   "author": "Daniel Sportes",
   "license": "ISC",
   "dependencies": {
-    "better-sqlite3": "8.6.0",
-    "express": "^4.18.2"
+    "better-sqlite3": "^11.9.1"
   },
-  "packageManager": "yarn@3.6.2",
   "devDependencies": {
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
-  },
-  "browserslist": [
-    "last 10 Chrome versions",
-    "last 10 Firefox versions",
-    "last 4 Edge versions",
-    "last 7 Safari versions",
-    "last 8 Android versions",
-    "last 8 ChromeAndroid versions",
-    "last 8 FirefoxAndroid versions",
-    "last 10 iOS versions",
-    "last 5 Opera versions"
-  ],
-  "engines": {
-    "node": "20.x.x"
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.7",
+    "webpack-cli": "^6.0.1"
   }
 }
